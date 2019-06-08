@@ -1,0 +1,21 @@
+label {
+  display: block;
+  margin-bottom: 15px;
+  position: relative;
+}
+
+input {
+  margin-left: 10px;
+}
+
+textarea {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.error {
+  position: absolute;
+  color: #f00;
+  left: 200px;
+  top: 0;
+}

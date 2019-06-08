@@ -1,0 +1,16 @@
+a {
+  font-size: 16px;
+  display: inline-block;
+  margin: 15px;
+
+  color: #111;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #333;
+}
+
+a.active {
+  background-color: #ff0;
+}

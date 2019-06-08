@@ -1,3 +1,39 @@
-<p>
-  contact works!
-</p>
+<h2>Contact form</h2>
+
+<form>
+  <label>
+    <span>Name</span>
+    <input name="name"
+           placeholder="Name"
+           (keyup)="validateName()"
+           [(ngModel)]="name" />
+
+    <div *ngIf="isNameInvalid"
+         class="error">
+      Name is required
+    </div>
+  </label>
+  <label>
+    <span>Email</span>
+    <input name="email"
+           placeholder="Email"
+           (keyup)="emailChanged()"
+           [(ngModel)]="email" />
+
+    <div *ngIf="isEmailInvalid"
+         class="error">
+      Invalid email address
+    </div>
+
+  </label>
+
+  <label>
+    <span>Message</span>
+    <textarea name="message"
+              [(ngModel)]="message">
+    </textarea>
+  </label>
+
+  <button (click)="formSubmit()">Submit</button>
+
+</form>
