@@ -7,6 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { FormsModule } from '@angular/forms';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 const routes: Routes = [
   {
@@ -18,13 +19,17 @@ const routes: Routes = [
     component: AboutComponent,
   },
   {
-    path: 'home',
+    path: '',
     component: HomeComponent,
   },
+  // {
+  //   path: '',
+  //   pathMatch: 'full',
+  //   redirectTo: 'home',
+  // }
   {
-    path: '',
-    pathMatch: 'full',
-    redirectTo: 'home',
+    path: '**',
+    component: PageNotFoundComponent,
   }
 ];
 
@@ -34,7 +39,8 @@ const routes: Routes = [
     ContactComponent,
     HomeComponent,
     AboutComponent,
-    NavigationComponent
+    NavigationComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,

@@ -1,9 +1,9 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: "app-contact",
-  templateUrl: "./contact.component.html",
-  styleUrls: ["./contact.component.css"]
+  selector: 'app-contact',
+  templateUrl: './contact.component.html',
+  styleUrls: ['./contact.component.css']
 })
 export class ContactComponent implements OnInit {
   public name: string;
@@ -14,9 +14,9 @@ export class ContactComponent implements OnInit {
   public isNameInvalid: boolean;
 
   constructor() {
-    this.name = "";
-    this.email = "";
-    this.message = "";
+    this.name = '';
+    this.email = '';
+    this.message = '';
   }
 
   ngOnInit() {}
