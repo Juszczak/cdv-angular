@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ContactService } from './contact.service';
+import { ContactService, ContactData } from './contact.service';
 
 @Component({
   selector: 'app-contact',
@@ -18,13 +18,11 @@ export class ContactComponent implements OnInit {
   constructor(service: ContactService) {
     this.service = service;
 
-    this.name = '';
-    this.email = '';
-    this.message = '';
+    const data: ContactData = this.service.getContactData();
 
-    // console.log(this);
-    this.service.getContactData();
-
+    this.name = data.name;
+    this.email = data.email;
+    this.message = data.message;
   }
 
   ngOnInit() {}

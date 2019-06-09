@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-interface ContactData {
+export interface ContactData {
   name: string;
   email: string;
   message: string;
@@ -10,7 +10,7 @@ interface ContactData {
   providedIn: 'root'
 })
 export class ContactService {
-  public dataStorageKey: string = 'contactData';
+  public dataStorageKey = 'contactData';
 
   public saveContactData(name: string, email: string, message: string): void {
     const contactData: ContactData = {
@@ -19,7 +19,7 @@ export class ContactService {
       message,
     };
     const encoded: string = JSON.stringify(contactData);
-    //                           klucz         wartość
+    //                          klucz                wartość
     window.localStorage.setItem(this.dataStorageKey, encoded);
     // window - okno przeglądarki
     // localStorage - miejsce do przechowywania danych
