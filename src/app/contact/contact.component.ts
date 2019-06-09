@@ -20,9 +20,15 @@ export class ContactComponent implements OnInit {
 
     const data: ContactData = this.service.getContactData();
 
-    this.name = data.name;
-    this.email = data.email;
-    this.message = data.message;
+    if (data) {
+      this.name = data.name;
+      this.email = data.email;
+      this.message = data.message;
+    } else {
+      this.name = '';
+      this.email = '';
+      this.message = '';
+    }
   }
 
   ngOnInit() {}
