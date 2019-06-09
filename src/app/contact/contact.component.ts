@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ContactService } from './contact.service';
 
 @Component({
   selector: 'app-contact',
@@ -13,7 +14,7 @@ export class ContactComponent implements OnInit {
   public isEmailInvalid: boolean;
   public isNameInvalid: boolean;
 
-  constructor() {
+  constructor(contactService: ContactService) {
     this.name = '';
     this.email = '';
     this.message = '';
