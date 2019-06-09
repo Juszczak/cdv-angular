@@ -1,3 +1,20 @@
-<p>
-  about works!
-</p>
+<p><a href="https://swapi.co">swapi.co</a></p>
+
+<div class="planets">
+  <div *ngFor="let planet of planets"
+       class="planet">
+    <!-- planet - obiekt typu Planet -->
+    {{ planet.name }}
+  </div>
+</div>
+
+<div class="pagination">
+  <button (click)="previousPage()"
+          [disabled]="!previous">
+    previous
+  </button>
+  <button (click)="nextPage()"
+          [disabled]="!next">
+    next
+  </button>
+</div>
