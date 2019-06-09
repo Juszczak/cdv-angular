@@ -10,14 +10,21 @@ export class ContactComponent implements OnInit {
   public name: string;
   public email: string;
   public message: string;
+  public service: ContactService;
 
   public isEmailInvalid: boolean;
   public isNameInvalid: boolean;
 
-  constructor(contactService: ContactService) {
+  constructor(service: ContactService) {
+    this.service = service;
+
     this.name = '';
     this.email = '';
     this.message = '';
+
+    // console.log(this);
+    this.service.getContactData();
+
   }
 
   ngOnInit() {}
@@ -29,6 +36,20 @@ export class ContactComponent implements OnInit {
   public formSubmit(): void {
     this.validateEmail();
     this.validateName();
+
+
+    if (this.isNameInvalid || this.isEmailInvalid) {
+      console.log('wartość pola name lub pola email jest niepoprawna');
+      console.log('nie zapisujemy niepoprawnych danych');
+    } else {
+      console.log('wartość pola name i pola email jest OK');
+      console.log('zapisujemy!');
+      this.service.saveContactData(this.name, this.email, this.message);
+    }
+
+//   if (!this.isNameInvalid && !this.isEmailInvalid) {
+//     this.service.saveContactData(this.name, this.email, this.message);
+//   }
   }
 
   private validateEmail(): void {
